@@ -27,39 +27,39 @@ const questions = [
         ]
     },
     {
-        question: "Which of the following is a type of polymorphism in Java Programming?",
+        question: "Choose the server-side JavaScript object?",
         answers: [
-            { text:"Multiple polymorphism", correct:false},
-            { text:"Compile time polymorphism", correct:true},
-            { text:"Multilevel polymorphism", correct:false},
-            { text:"Execution time polymorphism", correct:false},
+            { text:"FileUpLoad", correct:false},
+            { text:"File", correct:true},
+            { text:"Date", correct:false},
+            { text:"Function", correct:false},
         ]
     },
     {
-        question: "What is Truncation in Java?",
+        question: "Which method of an Array object adds and/or removes elements from an array",
         answers: [
-            { text:"Floating-point value assigned to a Floating type", correct:false},
-            { text:"Floating-point value assigned to an integer type", correct:true},
-            { text:"Integer value assigned to floating type", correct:false},
-            { text:"Integer value assigned to floating type", correct:false},
+            { text:"Reverse", correct:false},
+            { text:"Splice", correct:true},
+            { text:"Shift", correct:false},
+            { text:"Slice", correct:false},
         ]
     },
     {
-        question: "Which exception is thrown when java is out of memory?",
+        question: "The syntax of a blur method in a buttonobject is?",
         answers: [
-            { text:"OutOfMemoryError", correct:true},
-            { text:"MemoryError", correct:false},
-            { text:"MemoryOutOfBoundsException", correct:false},
-            { text:"MemoryFullException", correct:false},
+            { text:"Blur()", correct:true},
+            { text:"Blur(contrast)", correct:false},
+            { text:"Blur(value)", correct:false},
+            { text:"Blur(depth)", correct:false},
         ]
     },
     {
-        question: "Which of these are selection statements in Java?",
+        question: "What is mean by <this> keyword in javascript?",
         answers: [
-            { text:"break", correct:false},
-            { text:"continue", correct:false},
-            { text:"for()", correct:false},
-            { text:"if()", correct:true},
+            { text:"It refers current object", correct:true},
+            { text:"It referes previous object", correct:false},
+            { text:"It is variable which contains value", correct:false},
+            { text:"None of the above", correct:false},
         ]
     },
     {
@@ -152,8 +152,14 @@ function selectAnswer(e){
 
 function showScore(){
     resetState();
-    questionElement.innerHTML=`You scored ${score} out of ${questions.length}!`;
+    if(score>7){
+    questionElement.innerHTML=`Congratulation you scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML="Play Again";
+    }
+    else{
+        questionElement.innerHTML=`You scored ${score} out of ${questions.length}! Dont worry try again!!!`;
+
+    }
     nextButton.style.display="block";
 }
 
